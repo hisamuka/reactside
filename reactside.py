@@ -21,13 +21,13 @@ def Component(base=QWidget):
                     child = self.layout().takeAt(0)
                     if child.widget():
                         child.widget().deleteLater()
-                        # child.widget().setParent(None)
 
         def render_(self):
             raise NotImplementedError('Subclasses must override render_')
 
         def set_state(self, state: dict):
-            self.state = state
+            for key in state.keys():
+                self.state[key] = state[key]
             self.clear()
             self.render_()
             self.show()
