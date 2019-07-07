@@ -5,7 +5,7 @@ from reactside import Component
 
 class NicePanel(Component(QWidget)):
     def __init__(self):
-        initial_state = {"name": "---", "age": 10}
+        initial_state = {"name": "---"}
         layout = QGridLayout()
         super().__init__(initial_state, layout)
 
